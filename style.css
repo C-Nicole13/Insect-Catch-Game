@@ -5,10 +5,7 @@
 }
 
 body {
-  background-image: url('dirt.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #5c3a21;
   color: #fff;
   font-family: 'Press Start 2P', sans-serif;
   height: 100vh;
