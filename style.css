@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: linear-gradient(135deg, #4a2e18, #6d4220);
   color: #fff;
@@ -14,49 +8,34 @@ body {
   text-align: center;
 }
 
-.btn {
-  border: 0;
-  background-color: #fff;
-  color: #516dff;
-  padding: 15px 20px;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn:focus {
-  outline: 0;
-}
-
 .screen {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: margin 0.5s ease-out;
-}
-
-.choose-insect-btn img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  height: 100vh;
+  transition: margin-top 0.4s ease-in-out;
 }
 
 .screen.up {
   margin-top: -100vh;
 }
 
-a {
-  color: #fff;
+.btn {
+  background-color: #fff;
+  border: none;
+  color: #5c3a21;
+  padding: 15px 30px;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-h1 {
-  line-height: 1.4;
+.btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
 }
 
 .insects-list {
@@ -77,22 +56,37 @@ h1 {
   color: #fff;
   cursor: pointer;
   font-family: inherit;
-  width: 150px;
-  height: 150px;
+  font-size: 16px;
+  padding: 20px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .choose-insect-btn:hover {
-  background-color: white;
-  color: #516dff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
-.choose-insect-btn:active {
-  background-color: rgba(255, 255, 255, 0.7);
+.choose-insect-btn img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+.game-container {
+  position: relative;
 }
 
 .time, .score {
   position: absolute;
   top: 20px;
+  font-size: 18px;
 }
 
 .time {
@@ -104,44 +98,35 @@ h1 {
 }
 
 .message {
-  line-height: 1.7;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  padding: 20px;
-  z-index: 100;
-  text-align: center;
-  opacity: 0;
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -150%);
-  transition: transform 0.4s ease-in;
+  bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
 
 .message.visible {
-  transform: translate(-50%, 150%);
   opacity: 1;
 }
 
 .insect {
   cursor: pointer;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.3s ease-in-out;
-  top: 200px;
-  left: 300px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
 }
 
 .insect img {
   width: 100px;
   height: 100px;
+  object-fit: contain;
 }
 
 .insect.caught {
-  transform: translate(-50%, -50%) scale(0);
+  transform: scale(0);
 }
